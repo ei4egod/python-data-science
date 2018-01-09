@@ -1,5 +1,12 @@
 print('hello world')
 
+"""
+python -m doctest -v stats.py
+"""
+
+from collections import defaultdict
+
+
 def add(num1, num2):
     return num1 + num2
 
@@ -60,4 +67,3 @@ def mode(numbers):
     for el in numbers:
         d[el] += 1
     return(sorted(d, key=lambda key: d[key], reverse=True)[0])
-    
