@@ -68,3 +68,23 @@ def mode(numbers):
     for el in numbers:
         d[el] += 1
     return(sorted(d, key=lambda key: d[key], reverse=True)[0])
+
+
+def variance(numbers, ddof):
+    # input is a list of numbers
+    """
+    >>> variance([2,4,6], 1)
+    4.0
+    """
+
+    sum_squares = []
+    sum_squares = [(i-mean(numbers))**2 for i in numbers]
+    var_pop = sum(sum_squares) / (len(numbers) - ddof)
+    return(var_pop)
+
+def std_dev(numbers, ddof):
+    """
+    >>> std_dev([2,4,6], 1)
+    2.0
+    """
+    return(variance(numbers, ddof)**(1/2))
